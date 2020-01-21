@@ -6,7 +6,7 @@
         "before": [
           {
             "result": {
-              "duration": 3672079173,
+              "duration": 3827679802,
               "status": "passed"
             },
             "match": {
@@ -18,12 +18,32 @@
         "name": "As a Customer we want to see if the second iPhone",
         "description": "related ad from the second results page from www.aliexpress.com has at\nleast 1 item to be bought.",
         "id": "search-feature;as-a-customer-we-want-to-see-if-the-second-iphone;;2",
+        "after": [
+          {
+            "result": {
+              "duration": 1207383,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Test.tearDown(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 1393429259,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Test.afterScenarioFinish()"
+            }
+          }
+        ],
         "type": "scenario",
         "keyword": "Scenario Outline",
         "steps": [
           {
             "result": {
-              "duration": 5334169435,
+              "duration": 4226606080,
               "status": "passed"
             },
             "line": 7,
@@ -35,7 +55,7 @@
           },
           {
             "result": {
-              "duration": 4870148,
+              "duration": 4621533,
               "status": "passed"
             },
             "line": 8,
@@ -56,7 +76,7 @@
           },
           {
             "result": {
-              "duration": 28718,
+              "duration": 24205,
               "status": "passed"
             },
             "line": 9,
@@ -68,7 +88,7 @@
           },
           {
             "result": {
-              "duration": 26256,
+              "duration": 24615,
               "status": "passed"
             },
             "line": 10,
