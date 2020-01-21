@@ -34,7 +34,7 @@ public class Test {
 	
 	@When("^I search for \"([^\"]*)\" on the searchBox$")
 	public void i_search_for_on_the_searchBox(String item) {
-//		page.homePage.searchItem(driver, item);
+		page.homePage.searchItem(driver, item);
 	}
 
 	@And("^I navegate to the second page from the related list$")

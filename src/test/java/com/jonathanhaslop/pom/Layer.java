@@ -3,6 +3,7 @@ package com.jonathanhaslop.pom;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -87,5 +88,25 @@ public class Layer {
 	public void visit(String url) {
 		this.driver.get(url);
 	}
+	
+	public void sleep(int seconds) {
+		try {
+			Thread.sleep(seconds);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void handleOverlay(WebDriver driver) {
+		try {
+			sleep(2000);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("return document.querySelector('div.ui-mask').remove();");
+			js.executeScript("return document.querySelector('.ui-newuser-layer-dialog').remove();");
+		} catch (Exception e) {
+			System.out.println("Could't find overlay");
+		}
+	}
+	
 }
 

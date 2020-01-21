@@ -18,6 +18,7 @@ public class HomePage extends Layer {
 	}
 	
 	public void searchItem(WebDriver driver, String item) {
+		handleOverlay(driver);
 		typeSearchBox(item);
 		searchSubmit();
 	}
