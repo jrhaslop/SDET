@@ -10,6 +10,5 @@ Feature: Search Feature
     Then There must be at least one item to be bought
 
     Examples: 
-      | item   |
-      | iPhone |
-      
+      | item        |
+      | iPhone      |

@@ -29,23 +29,29 @@ public class Test {
 	
 	@Given("^I navigate to homePage$")
 	public void i_navigate_to_homePage() {
-		this.driver.get(Propertie.readPropertie("url"));
+		page.visit(Propertie.readPropertie("url"));
 	}
-	
+
 	@When("^I search for \"([^\"]*)\" on the searchBox$")
-	public void i_search_for_on_the_searchBox(String item) {
+	public void i_search_for_item_on_the_searchBox(String item) {
 		page.homePage.searchItem(driver, item);
 	}
 
 	@And("^I navegate to the second page from the related list$")
 	public void i_navegate_to_the_second_page_from_the_related_list() {
-//		page.homePage.NextPage(driver);
+		page.homePage.NextPage(driver);
+		System.out.println(page.homePage.getFirstListElementID());
 	}
 
 	@Then("^There must be at least one item to be bought$")
 	public void there_must_be_at_least_one_item_to_be_bought() {
+		page.homePage.waitRelatedNextPage();
 		Assert.assertEquals(true, page.homePage.hasAtLeastOneItem());
+		System.out.println(page.homePage.getFirstListElementID());
 	}
+	
+	
+	/* REPORT METHODS */
 	
 	@After(order = 0)
 	public void afterScenarioFinish() {

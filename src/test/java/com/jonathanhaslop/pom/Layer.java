@@ -1,6 +1,7 @@
 package com.jonathanhaslop.pom;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -25,6 +26,11 @@ public class Layer {
 	public void waitElements(String selector, int seconds) {
 		WebDriverWait wdWait = new WebDriverWait(driver, seconds);
 		wdWait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.cssSelector(selector)));
+	}
+	
+	public void waitUntilElementIsNotVisible(WebElement element, int seconds) {
+		WebDriverWait wdWait = new WebDriverWait(driver, seconds);
+		wdWait.until(ExpectedConditions.invisibilityOf(element));
 	}
 
 	public WebElement findElement(String selector) {
@@ -104,8 +110,21 @@ public class Layer {
 			js.executeScript("return document.querySelector('div.ui-mask').remove();");
 			js.executeScript("return document.querySelector('.ui-newuser-layer-dialog').remove();");
 		} catch (Exception e) {
-			System.out.println("Could't find overlay");
+			System.out.println("");
 		}
+	}
+	
+	public void turnOffImplicitWaits(WebDriver driver) {
+		driver.manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+	}
+
+	public void turnOnImplicitWaits(WebDriver driver) {
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+	
+	public void scrollDown(WebDriver driver) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)", "");
 	}
 	
 }
