@@ -1,0 +1,90 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 3672079173,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Test.initWebDriver()"
+            }
+          }
+        ],
+        "line": 14,
+        "name": "As a Customer we want to see if the second iPhone",
+        "description": "related ad from the second results page from www.aliexpress.com has at\nleast 1 item to be bought.",
+        "id": "search-feature;as-a-customer-we-want-to-see-if-the-second-iphone;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 5334169435,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "I navigate to homePage",
+            "match": {
+              "location": "Test.i_navigate_to_homePage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 4870148,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "I search for \"iPhone\" on the searchBox",
+            "match": {
+              "arguments": [
+                {
+                  "val": "iPhone",
+                  "offset": 14
+                }
+              ],
+              "location": "Test.i_search_for_on_the_searchBox(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 28718,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "I navegate to the second page from the related list",
+            "match": {
+              "location": "Test.i_navegate_to_the_second_page_from_the_related_list()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 26256,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "There must be at least one item to be bought",
+            "match": {
+              "location": "Test.there_must_be_at_least_one_item_to_be_bought()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Search Feature",
+    "description": "",
+    "id": "search-feature",
+    "keyword": "Feature",
+    "uri": "src/test/resources/Features/search.feature"
+  }
+]
